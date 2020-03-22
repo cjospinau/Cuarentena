@@ -4,18 +4,22 @@
 double sumup(int N);
 double sumdown(int N);
 
+
 int main()
 {
   int N;
+  double dif;
   std::cout.precision(15); std::cout.setf(std::ios::scientific);
 
-  for(int N = 1; N <= 100; N += 5)
+  for(int N = 1; N <= 500; N += 1)
     {
-      std::cout << N << "\t" << sumup(N) << "\t" << sumdown(N) << std::endl;
+      dif = (sumdown(N)-sumup(N))/(sumup(N)+sumdown(N));
+
+	std::cout << N << "\t" << dif << std::endl; 
       
     }
 
-  return 0;
+  return dif;
 }
 
 double sumup(int N)
@@ -39,5 +43,6 @@ double sumdown(int N)
     }
   return sum;
 }
+
 
 
