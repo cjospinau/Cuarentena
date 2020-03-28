@@ -8,18 +8,20 @@ double sumdown(int N);
 int main()
 {
   int N;
-  double dif;
+  double dif1;
+  double dif2;
   std::cout.precision(15); std::cout.setf(std::ios::scientific);
 
-  for(int N = 1; N <= 500; N += 1)
+  for(int N = 1; N <= 300; N += 1)
     {
-      dif = (sumdown(N)-sumup(N))/(sumup(N)+sumdown(N));
+      dif1 = (sumdown(N)-sumup(N))/(sumdown(N));
+      dif2 = (sumdown(N)-sumup(N))/(sumup(N));
 
-	std::cout << N << "\t" << dif << std::endl; 
+      std::cout << N << "\t" << dif1 << "\t"<< dif2 << std::endl; 
       
     }
 
-  return dif;
+  return dif1;
 }
 
 double sumup(int N)
